@@ -15,8 +15,15 @@ COPY . .
 
 COPY config/config.yml ./config/config.yml
 
+# install psql
+RUN apt-get update
+RUN apt-get -y install postgresql-client
+
+# make wait-for-postgres.sh executable
+RUN chmod +x wait-for-postgres.sh
+
 # Собираем Go-приложение
-RUN go build -o myapp ./cmd
+RUN go build -o echo-todo ./cmd
 
 RUN ls -l ./config
 
@@ -24,4 +31,4 @@ RUN ls -l ./config
 EXPOSE 8080
 
 # Команда, которая будет выполняться при запуске контейнера
-CMD ["./myapp"]
+CMD ["./echo-todo"]
