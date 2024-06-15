@@ -1,0 +1,6 @@
+serverPort: "8000"
+host: "db"
+port: "5432"
+user: "postgres"
+dbname: "echo"
+sslmode: "disable"
