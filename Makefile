@@ -1,2 +1,8 @@
+build:
+	docker-compose build echo-todo
+
 run:
-	go run ./cmd/main.go
+	docker-compose up echo-todo
+
+# run:
+# 	go run ./cmd/main.go
