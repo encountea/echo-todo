@@ -4,5 +4,4 @@ build:
 run:
 	docker-compose up echo-todo
 
-# run:
-# 	go run ./cmd/main.go
+
